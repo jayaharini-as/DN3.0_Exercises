@@ -1,0 +1,45 @@
+# Library Management System
+
+## Scenario:
+You are developing a library management system where users can search for books by title or author. This system helps manage a collection of books and allows users to efficiently find books using different search algorithms.
+
+## Steps:
+
+### 1. Understand Search Algorithms:
+**Search algorithms** are methods used to locate a specific item in a collection of items. Two common search algorithms used in this scenario are:
+
+- **Linear Search**:
+  - **Description**: Linear search, also known as sequential search, involves checking each element in a list one by one until the target element is found or the list ends.
+  - **Time Complexity**: \(O(n)\), where \(n\) is the number of elements in the list. This means the time taken grows linearly with the size of the list.
+  - **Advantages**: Simple to implement and does not require the list to be sorted. It works well with small datasets or unsorted data.
+  - **Disadvantages**: Inefficient for large datasets, as it may require checking every element in the list.
+
+- **Binary Search**:
+  - **Description**: Binary search is an efficient algorithm that repeatedly divides a sorted list in half to find a target element. It requires the list to be sorted in advance.
+  - **Time Complexity**: \(O(\log n)\), where \(n\) is the number of elements in the list. This indicates that the time taken grows logarithmically with the size of the list.
+  - **Advantages**: Much faster than linear search for large datasets, as it significantly reduces the number of comparisons needed.
+  - **Disadvantages**: Requires the list to be sorted before searching. If the list is not sorted, it must be sorted first, which adds extra overhead.
+
+### 2. Setup:
+Create a class called **Book** with the following attributes:
+- **bookId**: An identifier for the book.
+- **title**: The title of the book.
+- **author**: The author of the book.
+
+This class serves as the basic structure for storing and manipulating book data.
+
+### 3. Implementation:
+- **Linear Search Implementation**:
+  - This involves iterating through each book in the collection and checking if the title matches the search query. If a match is found, the book is returned; otherwise, the search continues until all books have been checked.
+
+- **Binary Search Implementation**:
+  - This involves dividing the list of books into halves and comparing the middle book's title with the search query. Depending on whether the query is less than or greater than the middle title, the search continues in the left or right half of the list, respectively. This process is repeated until the book is found or the search interval is empty.
+
+### 4. Analysis:
+- **Time Complexity Comparison**:
+  - **Linear Search**: \(O(n)\). The performance degrades linearly with the increase in the number of books.
+  - **Binary Search**: \(O(\log n)\). The performance improves significantly with the increase in the number of books, making it more efficient for large datasets.
+
+- **When to Use Each Algorithm**:
+  - **Linear Search**: Best used when dealing with small or unsorted datasets. It is straightforward and does not require preprocessing.
+  - **Binary Search**: Best used when dealing with large datasets that are already sorted. It provides a more efficient way to search and is preferable for large-scale applications where performance is critical.
