@@ -1,0 +1,46 @@
+# Financial Forecasting Tool
+
+## Scenario
+You are developing a financial forecasting tool to predict future values based on past data. This tool is intended to help in financial planning by projecting how current values might evolve over time given certain growth rates.
+
+## Steps
+
+### 1. Understand Recursive Algorithms
+
+**Recursion** is a programming technique where a function calls itself to solve smaller instances of the same problem. The key concepts involved in recursion are:
+
+- **Base Case**: The condition under which the recursive function stops calling itself. It provides a solution to the simplest instance of the problem.
+- **Recursive Case**: The part of the function where it calls itself to break down the problem into smaller, more manageable pieces.
+
+**Advantages of Recursion**:
+- Simplifies complex problems by dividing them into simpler subproblems.
+- Makes code more elegant and easier to understand for certain problems.
+
+**Drawbacks**:
+- Can lead to high memory usage due to multiple function calls on the call stack.
+- May result in excessive computation if not properly optimized.
+
+### 2. Setup
+
+To calculate future values recursively, you need to create a method that models this process. The method will:
+
+- Take the initial value, growth rate, and number of periods as inputs.
+- Apply the growth rate recursively to the initial value until the desired number of periods is reached.
+
+### 3. Implementation
+
+The recursive method will:
+- **Base Case**: Return the initial value when the number of periods is zero. This signifies that no further calculation is needed.
+- **Recursive Case**: Multiply the current value by `(1 + growth rate)` and call the method again with the updated value and reduced number of periods.
+
+### 4. Analysis
+
+**Time Complexity**:
+- The time complexity of the recursive algorithm for calculating future values is \(O(n)\), where \(n\) is the number of periods. This is because each recursive call processes one period, resulting in \(n\) calls to reach the base case.
+
+**Optimization**:
+- **Memoization**: Store intermediate results to avoid redundant calculations. This technique can be applied if the function calls with the same parameters are repeated, thus reducing the number of recursive calls.
+- **Iterative Approach**: For scenarios where recursion overhead becomes a concern, an iterative approach (using loops) can be more efficient as it avoids the overhead of multiple recursive calls and stack usage.
+
+**Conclusion**:
+- **Recursion** is useful for its simplicity and ability to break down problems, but it can be optimized or replaced with iterative solutions when performance and memory efficiency are critical.
